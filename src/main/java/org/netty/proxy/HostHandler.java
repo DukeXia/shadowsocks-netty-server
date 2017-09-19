@@ -2,12 +2,12 @@ package org.netty.proxy;
 
 import java.net.InetAddress;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.netty.config.Config;
 import org.netty.encryption.CryptFactory;
 import org.netty.encryption.CryptUtil;
 import org.netty.encryption.ICrypt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -25,7 +25,7 @@ import io.netty.handler.codec.socks.SocksAddressType;
  */
 public class HostHandler extends ChannelInboundHandlerAdapter {
 
-	private static Log logger = LogFactory.getLog(HostHandler.class);
+	private static Logger logger = LoggerFactory.getLogger(HostHandler.class);
 	private ICrypt _crypt;
 
 	public HostHandler(Config config) {
